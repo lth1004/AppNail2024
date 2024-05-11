@@ -11,14 +11,21 @@ namespace NailApp.Services.Services
         private readonly IMapper _mapper;
 
         private readonly IRepository<UserEntity> _repository;
-        private readonly IUserRepository _UserRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IMapper mapper, IRepository<UserEntity> repository, IUserRepository UserRepository)
+        public UserService(IMapper mapper, IRepository<UserEntity> repository, IUserRepository userRepository)
         {
             _mapper = mapper;
             _repository = repository;
-            _UserRepository = UserRepository;
+            _userRepository = userRepository;
         }
+
+        public AuthenticateDtoResponse? Authenticate(AuthenticateRequest model)
+        {
+            var entity = _userRepository.Authenticate(model);
+            return _mapper.Map<AuthenticateDtoResponse>(entity);
+        }
+
         public IEnumerable<UserDto> GetAll()
         {
             var result = _repository.GetAll().AsEnumerable<UserEntity>().ToList();
@@ -27,8 +34,14 @@ namespace NailApp.Services.Services
 
         IEnumerable<UserDto> IUserService.SearchUserName(string str)
         {
-            var entity = _UserRepository.SearchUser(str);
+            var entity = _userRepository.SearchUser(str);
             return _mapper.Map<List<UserDto>>(entity);
+        }
+
+        UserDto IUserService.GetUserById(int id)
+        {
+            var entity = _userRepository.GetUserById(id);
+            return _mapper.Map<UserDto>(entity);
         }
     }
 }
