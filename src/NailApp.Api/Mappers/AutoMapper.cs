@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using NailApp.Api.Models;
 using NailApp.API.Models;
 using NailApp.Services.Dtos;
 
@@ -10,8 +9,8 @@ namespace NorthwindApp.API.Mappers
         public AutoMapper()
         {
             CreateMap<User, UserDto>();
-            CreateMap<AuthenticateApiRequest, AuthenticateDtoRequest>().ReverseMap();
-            CreateMap<AuthenticateApiResponse, AuthenticateDtoResponse>().ReverseMap();
+           /* CreateMap<AuthenticateApiRequest, AuthenticateDtoRequest>().ReverseMap();
+            CreateMap<AuthenticateApiResponse, AuthenticateDtoResponse>().ReverseMap();*/
         }
     }
 }

@@ -20,10 +20,10 @@ namespace NailApp.Services.Services
             _userRepository = userRepository;
         }
 
-        public AuthenticateDtoResponse? Authenticate(AuthenticateRequest model)
+        public AuthenticateResponse? Authenticate(AuthenticateRequest model)
         {
             var entity = _userRepository.Authenticate(model);
-            return _mapper.Map<AuthenticateDtoResponse>(entity);
+            return _mapper.Map<AuthenticateResponse>(entity);
         }
 
         public IEnumerable<UserDto> GetAll()

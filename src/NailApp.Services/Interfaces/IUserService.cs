@@ -31,6 +31,6 @@ namespace NailApp.Services.Interfaces
         /// </summary>
         /// <param name=""></param>
         /// <returns></returns>
-        AuthenticateDtoResponse? Authenticate(AuthenticateRequest model);
+        AuthenticateResponse? Authenticate(AuthenticateRequest model);
     }
 }
