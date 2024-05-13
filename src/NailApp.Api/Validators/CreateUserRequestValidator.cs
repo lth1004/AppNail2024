@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using NailApp.API.Models;
 
-namespace NorthwindApp.API.Validators
+namespace NailApp.API.Validators
 {
-    public class CreateUserRequestValidator : AbstractValidator<UserRequest>
+    public class CreateUserRequestValidator : AbstractValidator<User>
     {
         public CreateUserRequestValidator()
         {

@@ -8,7 +8,9 @@ namespace NorthwindApp.API.Mappers
     {
         public AutoMapper()
         {
-            CreateMap<UserRequest, UserDto>();
+            CreateMap<User, UserDto>();
+           /* CreateMap<AuthenticateApiRequest, AuthenticateDtoRequest>().ReverseMap();
+            CreateMap<AuthenticateApiResponse, AuthenticateDtoResponse>().ReverseMap();*/
         }
     }
 }

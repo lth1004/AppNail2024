@@ -1,7 +1,4 @@
-﻿using NailApp.Services.Dtos;
-using System.ComponentModel.DataAnnotations;
-
-namespace NailApp.Services.Dtos
+﻿namespace NailApp.Services.Dtos
 {
     public class UserDto : BaseDto
     {

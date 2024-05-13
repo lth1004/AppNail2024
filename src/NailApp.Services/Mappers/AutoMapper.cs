@@ -8,9 +8,9 @@ namespace NailApp.Services.Mappers
     {
         public AutoMapper()
         {
-            CreateMap<UserDto, UserEntity>()
-                .ReverseMap();
-
+            CreateMap<UserDto, UserEntity>().ReverseMap();
+            /*CreateMap<AuthenticateDtoRequest, AuthenticateRequest>().ReverseMap();
+            CreateMap<AuthenticateDtoResponse, AuthenticateResponse>().ReverseMap();*/
         }
     }
 }
